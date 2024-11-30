@@ -175,28 +175,28 @@
             if (window.location.href.includes("file://")) {
                 map.getContainer().style.cursor = 'crosshair';
                 map.on('mousemove', function (e) {
-                    map.attributionControl.setPrefix(Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng));
+                    map.attributionControl.setPrefix(Math.round(e.latlng.lat) + ',' + Math.round(e.latlng.lng));
                 });
                 map.on('click', function (e) {
-                    navigator.clipboard.writeText(Math.round(e.latlng.lat) + ', ' + Math.round(e.latlng.lng));
+                    navigator.clipboard.writeText(Math.round(e.latlng.lat) + ',' + Math.round(e.latlng.lng));
                 });
-                var debug_marker = L.marker([0, 0], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true }).addTo(map);
-                var debug_coordinates = [];
-                var debug_polygon = L.polygon(debug_coordinates, {color:"#fff000"}).addTo(map);
-                debug_marker.on('dragend', function (e) {
-                    var latlng = debug_marker.getLatLng();
-                    debug_coordinates.push([Math.round(latlng.lat), Math.round(latlng.lng)]);
-                    debug_polygon.setLatLngs(debug_coordinates);
-                    console.log(JSON.stringify(debug_coordinates));
+                var dev_linie_handle = L.marker([0, 0], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true }).addTo(map);
+                var dev_linie_coords = [];
+                var dev_linie_polygon = L.polygon(dev_linie_coords, {color:"#fff000"}).addTo(map);
+                dev_linie_handle.on('dragend', function (e) {
+                    var dev_linie_latlng = dev_linie_handle.getLatLng();
+                    dev_linie_coords.push([Math.round(dev_linie_latlng.lat), Math.round(dev_linie_latlng.lng)]);
+                    dev_linie_polygon.setLatLngs(dev_linie_coords);
+                    console.log(JSON.stringify(dev_linie_coords));
                 });
-                var debug_marker_2 = L.marker([0, 100], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/alt_pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true }).addTo(map);
-                var debug_coordinates_2 = [];
-                var debug_polygon_2 = L.polygon(debug_coordinates_2, {color:"#ff00bb"}).addTo(map);
-                debug_marker_2.on('dragend', function (e) {
-                    var latlng_2 = debug_marker_2.getLatLng();
-                    debug_coordinates_2.push([Math.round(latlng_2.lat), Math.round(latlng_2.lng)]);
-                    debug_polygon_2.setLatLngs(turf.bezierSpline(turf.lineString(debug_coordinates_2)).geometry.coordinates);
-                    console.log(JSON.stringify(debug_coordinates_2));
+                var dev_kurve_handle = L.marker([0, 100], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/alt_pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true }).addTo(map);
+                var dev_kurve_coords = [];
+                var dev_kurve_polygon = L.polygon(dev_kurve_coords, {color:"#ff00bb"}).addTo(map);
+                dev_kurve_handle.on('dragend', function (e) {
+                    var dev_kurve_latlng = dev_kurve_handle.getLatLng();
+                    dev_kurve_coords.push([Math.round(dev_kurve_latlng.lat), Math.round(dev_kurve_latlng.lng)]);
+                    dev_kurve_polygon.setLatLngs(turf.bezierSpline(turf.lineString(dev_kurve_coords)).geometry.coordinates);
+                    console.log(JSON.stringify(dev_kurve_coords));
                 });
                 document.querySelector('.leaflet-image-layer').style.border = '1px dashed #ffffff55';
                 /*// map size
