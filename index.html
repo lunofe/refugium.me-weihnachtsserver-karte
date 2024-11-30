@@ -152,9 +152,15 @@
             var map_image = L.imageOverlay("", bounds).addTo(map);
             map.attributionControl.setPrefix("<a href='https://github.com/lunofe/refugium.me-weihnachtsserver-karte'>Quelloffen auf GitHub</a>");
 
-            // easy marker helper
-            function marker(coords, icon, name) {
+            // easy leaflet helpers
+            function marker(coords, name, icon = "pin") {
                 return L.marker(coords, { icon: L.icon({ iconUrl: "assets/fluentui-emoji/" + icon + ".webp", iconSize: [44, 44], iconAnchor: [22, 42], popupAnchor: [0, -40] }) }).bindPopup(name);
+            }
+            function linie(color, coords, dashes) {
+                return L.polyline(coords, { color: color, dashArray: dashes });
+            }
+            function kurve(color, coords, dashes) {
+                return L.polyline(turf.bezierSpline(turf.lineString(coords)).geometry.coordinates, { color: color, dashArray: dashes });
             }
 
             // load layers and markers
