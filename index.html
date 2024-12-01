@@ -40,6 +40,10 @@
                 image-rendering: pixelated;                 /* universal support since 2021 */
             }
 
+            .leaflet-marker-pane, .leaflet-overlay-pane > svg {
+                filter: drop-shadow(2px 4px 6px black);
+            }
+
             .leaflet-control-layers-toggle {
                 background-image: url(assets/fluentui-emoji/layers.webp);
                 background-size: contain;
