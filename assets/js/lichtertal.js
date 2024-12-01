@@ -19,6 +19,24 @@ function lichtertal_layers() {
     ]);
 
     var lichtertal_spieler = L.layerGroup([
+        marker([94,-8], "MisterCookie1234"),
+        marker([40,20], "Myronis"),
+        marker([-52,14], "Modde"),
+        marker([-95,-5], "Blindus"),
+        marker([-83,35], "JBin"),
+        marker([-101,66], "Yodie"),
+        marker([-107,106], "finn_ost"),
+        marker([-149,91], "zGecco"),
+        marker([-154,38], "EinKuenstler"),
+        marker([-209,111], "_Backfisch_"),
+        marker([-138,131], "TeufelmichaHD"),
+        marker([-173,162], "Nyxxoos"),
+        marker([-120,174], "byFiliz"),
+        marker([-78,163], "v_Nessq"),
+        marker([-40,164], "KptnZurSee"),
+        marker([-5,165], "scaryta"),
+        marker([88,51], "Sherl0ck1889"),
+        marker([-385,214], "Ionogthereal"),
     ]);
 
     var lichtertal_strecken = L.layerGroup([
