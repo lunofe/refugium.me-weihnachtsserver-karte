@@ -12,6 +12,7 @@ function lichtertal_layers() {
         marker([44,-91], "Farmwelt", "farmwelt"),
 
         marker([121,29], "Detektei K&E", "detektei"),
+        marker([189,24], "Zeitung Lichtertaler Perspektive", "zeitung"),
         marker([139,6], "Darkingu Post", "post"),
 
         marker([50,-104], "Skilift »Waldlift«", "gondel"),
@@ -37,7 +38,7 @@ function lichtertal_layers() {
         marker([-138,131], "TeufelmichaHD"),
         marker([-173,162], "Nyxxoos"),
         marker([-120,174], "byFiliz"),
-        marker([-78,163], "v_Nessq"),
+        marker([-78,163], "v_Nessq,<br>Flying_Cr0w"),
         marker([-40,164], "KptnZurSee"),
         marker([-5,165], "scaryta"),
         marker([88,51], "Sherl0ck1889"),
