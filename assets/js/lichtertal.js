@@ -4,16 +4,27 @@ function lichtertal_layers() {
         marker([63,-77], "Spawn", "spawn"),
         marker([24,-69], "Rathaus", "rathaus"),
         marker([42,-70], "RefSport", "shop"),
-        marker([54,-40], "Adventskalender", "weihnachtsbaum"),
+        marker([48,-43], "Adventskalender", "weihnachtsbaum"),
         marker([-6,-49], "Gemeindezentrum", "rathaus"),
+        marker([156,-159], "Uno", "alt_karten"),
+        marker([159,-191], "Schach", "schach"),
+        marker([133,-208], "Mensch ärgere dich nicht", "würfel"),
+        marker([92,-214], "Skip-Bo", "karten"),
 
-        marker([71,-42], "Santa's Shop", "shop"),
+        marker([68,-39], "Santa's Shop", "shop"),
+        marker([55,-28], "Möbel", "shop"),
+        marker([60,-55], "Hutstand von larachen_nom", "shop"),
+        marker([44,-28], "Losbude", "shop"),
 
         marker([44,-91], "Farmwelt", "farmwelt"),
+
+        marker([-214,-119], "Kirche", "kirche"),
 
         marker([121,29], "Detektei K&E", "detektei"),
         marker([189,24], "Zeitung Lichtertaler Perspektive", "zeitung"),
         marker([139,6], "Darkingu Post", "post"),
+        marker([79,114], "Café Winterglanz", "cafe"),
+        marker([-41,14], "Café Röstwerk", "cafe"),
 
         marker([50,-104], "Skilift »Waldlift«", "gondel"),
         marker([50,-321], "Skilift »Waldlift«", "gondel"),
@@ -27,7 +38,7 @@ function lichtertal_layers() {
     var lichtertal_spieler = L.layerGroup([
         marker([94,-8], "MisterCookie1234"),
         marker([40,20], "Myronis"),
-        marker([-52,14], "Modde"),
+        marker([-59,14], "Modde"),
         marker([-95,-5], "Blindus"),
         marker([-83,35], "JBin"),
         marker([-101,66], "Yodie"),
@@ -75,7 +86,7 @@ function lichtertal_layers() {
         marker([263,91], "GandalfLP"),
         marker([190,206], "zeitspiel"),
         marker([180,188], "lunofe"),
-        marker([237,257], "HebrewYehudi"),
+        marker([244,244], "HebrewYehudi"),
         marker([203,238], "DonGrenny"),
         marker([162,247], "7Justin"),
         marker([128,200], "luuskyy_"),
@@ -88,7 +99,7 @@ function lichtertal_layers() {
         marker([109,335], "Darkholen"),
         marker([156,342], "Umolade"),
         marker([226,317], "Rayleth621"),
-        marker([201,378], "itsjamesight"),
+        marker([76,96], "itsjamesight"),
         marker([203,456], "touyainblue"),
         marker([247,460], "ruffyonepiece2"),
         marker([235,421], "Ninjaknecht"),
@@ -123,7 +134,9 @@ function lichtertal_layers() {
         marker([-129,45], "DarkvoiceLP"),
         marker([-36,-394], "SuicideG0at"),
         marker([-80,-413], "alexandra_____"),
-        marker([8,-500], "OniiiGhost9316")
+        marker([8,-500], "OniiiGhost9316"),
+        marker([-495,-364], "bashforfun,<br>hamsterbacke_03,<br>HarryBoo187,<br>Hishichi_,<br>Ja_NaTuerlich,<br>MaSterMinD,<br>ozTeck_"),
+        marker([124,247], "JuleMC")
     ]);
 
     var lichtertal_strecken = L.layerGroup([
@@ -187,6 +200,10 @@ function lichtertal_layers() {
         kurve("#9E2AA5", [[65,-101],[77,-129],[72,-142]], "1,10", "6"),
         // Weg in den Westen
         linie("#9E2AA5", [[-21,-386],[-55,-269],[-2,-199],[12,-132]], "1,10", "6"),
+        // Weg in den Südwesten
+        linie("#9E2AA5", [[-160,-72],[-160,-180],[-351,-180],[-351,-380],[-427,-380]], "1,10", "6"),
+        // Weg zu den Minispielen
+        kurve("#9E2AA5", [[122,-109],[128,-119],[139,-126],[144,-146],[155,-158],[159,-190],[136,-206],[134,-208],[134,-217],[92,-214]], "1,10", "6"),
     ]);
 
     var lichtertal_meta = L.layerGroup([
