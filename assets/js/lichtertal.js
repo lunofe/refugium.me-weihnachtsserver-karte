@@ -18,7 +18,7 @@ function lichtertal_layers() {
 
         marker([44,-91], "Farmwelt", "farmwelt"),
 
-        marker([-214,-119], "Kirche", "kirche"),
+        marker([-214,-119], "Kirche zum heiligen Wasserfall", "kirche"),
 
         marker([121,29], "Detektei K&E", "detektei"),
         marker([189,24], "Zeitung Lichtertaler Perspektive", "zeitung"),
@@ -105,7 +105,7 @@ function lichtertal_layers() {
         marker([235,421], "Ninjaknecht"),
         marker([310,459], "Tiger_rarwww"),
         marker([378,492], "osswald,<br>SquirrelTV"),
-        marker([247,460], "_BananeKirsch_"),
+        marker([247,460], "ruffyonepiece2"),
         marker([94,433], "lPingu"),
         marker([57,337], "BlackSn0W910"),
         marker([45,286], "larachen_nom"),
@@ -136,7 +136,9 @@ function lichtertal_layers() {
         marker([-80,-413], "alexandra_____"),
         marker([8,-500], "OniiiGhost9316"),
         marker([-495,-364], "bashforfun,<br>hamsterbacke_03,<br>HarryBoo187,<br>Hishichi_,<br>Ja_NaTuerlich,<br>MaSterMinD,<br>ozTeck_"),
-        marker([124,247], "JuleMC")
+        marker([124,247], "JuleMC"),
+        marker([-235,-61], "HalbVampir,<br>kestlp"),
+        marker([-189,346], "KeinBergNo"),
     ]);
 
     var lichtertal_strecken = L.layerGroup([
