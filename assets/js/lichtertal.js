@@ -139,6 +139,10 @@ function lichtertal_layers() {
         marker([124,247], "JuleMC"),
         marker([-235,-61], "HalbVampir,<br>kestlp"),
         marker([-189,346], "KeinBergNo"),
+        marker([-12,-396], "Solid_Backy"),
+        marker([-123,-567], "Dabergi204"),
+        marker([716,197], "Lena1505"),
+        marker([127,413], "_BananeKirsch_"),
     ]);
 
     var lichtertal_strecken = L.layerGroup([
