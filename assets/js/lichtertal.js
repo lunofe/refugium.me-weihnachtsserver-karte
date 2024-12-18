@@ -13,8 +13,12 @@ function lichtertal_layers() {
 
         marker([68,-39], "Santa's Shop", "shop"),
         marker([55,-28], "Möbel", "shop"),
-        marker([60,-55], "Hutstand von larachen_nom", "shop"),
+        marker([60,-55], "larachen_nom's Hutstand", "shop"),
         marker([44,-28], "Losbude", "shop"),
+        marker([84,-67], "Mob-Catcher", "shop"),
+        marker([70,-57], "Lichtertaler Perspektive", "shop"),
+        marker([82,-51], "LyphBot's Holzkisten", "shop"),
+        marker([59,-36], "Myronis Plätzchen & Glühwein", "shop"),
 
         marker([44,-91], "Farmwelt", "farmwelt"),
 
@@ -141,7 +145,7 @@ function lichtertal_layers() {
         marker([-189,346], "KeinBergNo"),
         marker([-12,-396], "Solid_Backy"),
         marker([-123,-567], "Dabergi204"),
-        marker([716,197], "Lena1505"),
+        marker([723,207], "Lena1505"),
         marker([127,413], "_BananeKirsch_"),
     ]);
 
@@ -205,11 +209,13 @@ function lichtertal_layers() {
         // Weg zum Westbahnhof
         kurve("#9E2AA5", [[65,-101],[77,-129],[72,-142]], "1,10", "6"),
         // Weg in den Westen
-        linie("#9E2AA5", [[-21,-386],[-55,-269],[-2,-199],[12,-132]], "1,10", "6"),
+        linie("#9E2AA5", [[15,-130],[9,-155],[9,-182],[-22,-182],[-22,-387]], "1,10", "6"),
         // Weg in den Südwesten
         linie("#9E2AA5", [[-160,-72],[-160,-180],[-351,-180],[-351,-380],[-427,-380]], "1,10", "6"),
         // Weg zu den Minispielen
         kurve("#9E2AA5", [[122,-109],[128,-119],[139,-126],[144,-146],[155,-158],[159,-190],[136,-206],[134,-208],[134,-217],[92,-214]], "1,10", "6"),
+        // Weg zum Ostbahnhof
+        linie("#9E2AA5", [[3,352],[3,433]], "1,10", "6"),
     ]);
 
     var lichtertal_meta = L.layerGroup([
