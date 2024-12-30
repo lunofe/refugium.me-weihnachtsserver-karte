@@ -75,22 +75,18 @@
             </select>
         </div>
 
+        <!-- libraries -->
         <script src="assets/js/leaflet.js"></script>
         <script src="assets/js/turf.js"></script>
+
+        <!-- map data -->
         <script src="assets/js/tannberg.js"></script>
         <script src="assets/js/lichtertal.js"></script>
         <script>
-            function map_data_switch() {
-                // clear old control
-                if (layer_toggle){
-                    map.removeControl(layer_toggle);
-                }
-
-                // switch the options
-                var year = document.getElementById('year').value;
-                if (year == "2024")
-                {
-                    var options = [
+            // define dates
+            const years = {
+                "2024": {
+                    days: [
                         "26.12.",
                         "25.12.",
                         "24.12.",
@@ -117,20 +113,14 @@
                         "03.12.",
                         "02.12.",
                         "01.12.",
-                        "30.11.",    
+                        "30.11.",
                         "29.11.",
-                        "28.11.",
-                    ];
-                    
-                    // layers
-                    tannberg_layers.forEach(layer => map.removeLayer(layer));
-                    lichtertal_layers.forEach(layer => layer.addTo(map));
-                    // control
-                    layer_toggle = lichtertal_layers[0].addTo(map);
-                }
-                else if (year == "2023")
-                {
-                    var options = [
+                        "28.11."
+                    ],
+                    layers: lichtertal_layers()
+                },
+                "2023": {
+                    days: [
                         "31.12.",
                         "23.12.",
                         "19.12.",
@@ -142,29 +132,39 @@
                         "05.12.",
                         "04.12.",
                         "03.12."
-                    ];
-
-                    // layers
-                    lichtertal_layers.forEach(layer => map.removeLayer(layer));
-                    tannberg_layers.forEach(layer => layer.addTo(map));
-                    // control
-                    layer_toggle = tannberg_layers[0].addTo(map);
+                    ],
+                    layers: tannberg_layers()
                 }
+            };
 
-                // set the dropdown
-                document.getElementById('day').innerHTML = options.map(option =>
-                    `<option value="${option}">${option}</option>`
+            function map_data_switch() {
+                // clear previous control and layers
+                if (layer_toggle) { map.removeControl(layer_toggle); }
+                map.eachLayer(layer => {
+                    if (layer !== map_image) {
+                        map.removeLayer(layer);
+                    }
+                });
+
+                // get user input
+                const data = years[document.getElementById('year').value];
+                // add layers and control
+                data.layers.forEach(layer => layer.addTo(map));
+                layer_toggle = data.layers[0].addTo(map);
+        
+                // update available days dropdown
+                document.getElementById('day').innerHTML = data.days.map(day =>
+                    `<option value="${day}">${day}</option>`
                 ).join('');
-
+        
                 // apply
                 update_map_image();
             }
 
             // update map image
             function update_map_image() {
-                var year = document.getElementById('year').value;
-                var day = document.getElementById('day').value;
-                map_image.setUrl("assets/map/" + year + "/" + day + "webp");
+                // switch image source based on user input
+                map_image.setUrl("assets/map/" + document.getElementById('year').value + "/" + document.getElementById('day').value + "webp");
             }
 
             // map setup
@@ -179,9 +179,9 @@
                 map.unproject([-896, -896], 0),
                 map.unproject([896, 896], 0)
             );
-
-            var map_image = L.imageOverlay("", bounds).addTo(map);
             map.attributionControl.setPrefix("<a href='https://github.com/lunofe/refugium.me-weihnachtsserver-karte'>Quelloffen auf GitHub</a>");
+            var map_image = L.imageOverlay("", bounds).addTo(map);
+            var layer_toggle;
 
             // easy leaflet helpers
             function marker(coords, name, icon = "pin") {
@@ -194,12 +194,7 @@
                 return L.polyline(turf.bezierSpline(turf.lineString(coords)).geometry.coordinates, { color: color, dashArray: dashes, weight: weight });
             }
 
-            // load layers and markers
-            var tannberg_layers = tannberg_layers();
-            var lichtertal_layers = lichtertal_layers();
-            var layer_toggle;
-
-            // init
+            // first run
             map_data_switch();
 
             // devtools
