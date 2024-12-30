@@ -204,7 +204,7 @@
                     map.attributionControl.setPrefix(Math.round(e.latlng.lat) + ',' + Math.round(e.latlng.lng));
                 });
                 map.on('click', function (e) {
-                    navigator.clipboard.writeText(Math.round(e.latlng.lat) + ',' + Math.round(e.latlng.lng));
+                    navigator.clipboard.writeText('[' + Math.round(e.latlng.lat) + ',' + Math.round(e.latlng.lng) + ']');
                 });
                 var dev_linie_handle = L.marker([0, 0], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true }).addTo(map);
                 var dev_linie_coords = [];
